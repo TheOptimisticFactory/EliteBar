@@ -16,7 +16,22 @@ namespace EliteBar
     {
         private readonly List<string> ignoredEntites = new List<string>
         {
-            "Metadata/Monsters/LeagueIncursion/VaalSaucerTurret", "Metadata/Monsters/AvariusCasticus/AvariusCasticusStatue"
+            "Metadata/Monsters/LeagueIncursion/VaalSaucerTurret",
+            "Metadata/Monsters/AvariusCasticus/AvariusCasticusStatue",
+            // Conquerors Ignores
+            "Metadata/Monsters/AtlasExiles/AtlasExile5Throne",
+            "Metadata/Monsters/AtlasExiles/AtlasExile5Apparition",
+            "Metadata/Monsters/AtlasExiles/AtlasExile3BurrowingViperMelee",
+            "Metadata/Monsters/AtlasExiles/AtlasExile3BurrowingViperRanged",
+            "Metadata/Monsters/AtlasExiles/AtlasExile3AcidPitDaemon",
+            "Metadata/Monsters/AtlasExiles/AtlasExile4ApparitionCascade",
+            // "Metadata/Monsters/AtlasExiles/AtlasExile3Apparition",
+            "Metadata/Monsters/AtlasExiles/AtlasExile2_",
+            "Metadata/Monsters/InvisibleFire/InvisibleFireEyrieHurricane",
+            // "Metadata/Monsters/AtlasExiles/AtlasExile1Apparition",
+            // Incursion Ignores
+            "Metadata/Monsters/LeagueIncursion/VaalSaucerRoomTurret",
+            "Metadata/Monsters/LeagueIncursion/VaalSaucerTurret",
         };
 
         private readonly Queue<Entity> EntityAddedQueue = new Queue<Entity>();
