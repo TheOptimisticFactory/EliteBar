@@ -23,6 +23,8 @@ namespace EliteBar
         public RangeNode<int> Y { get; set; } = new RangeNode<int>(0, 0, 3000);
         [Menu("Width")]
         public RangeNode<int> Width { get; set; } = new RangeNode<int>(100, 1, 1000);
+        [Menu("Dynamic Width")]
+        public ToggleNode DynamicWidth { get; set; } = new ToggleNode(false);
         [Menu("Height")]
         public RangeNode<int> Height { get; set; } = new RangeNode<int>(20, 1, 200);
         [Menu("Border color")]
@@ -60,5 +62,6 @@ namespace EliteBar
         [Menu("Test")]
         public RangeNode<float> Test { get; set; } = new RangeNode<float>(1, 0, 1);
         public ToggleNode MultiThreading { get; set; } = new ToggleNode(false);
+        public ToggleNode Debug { get; set; } = new ToggleNode(false);
     }
 }

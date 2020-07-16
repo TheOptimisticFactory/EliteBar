@@ -16,22 +16,83 @@ namespace EliteBar
     {
         private readonly List<string> ignoredEntites = new List<string>
         {
-            "Metadata/Monsters/LeagueIncursion/VaalSaucerTurret",
-            "Metadata/Monsters/AvariusCasticus/AvariusCasticusStatue",
+            "Metadata/Monsters/LeagueAffliction/Volatile/AfflictionVolatile",
+            "Metadata/Monsters/VolatileCore/VolatileCore",
+            
+            // Delirium Ignores
+            "Metadata/Monsters/LeagueAffliction/DoodadDaemons/DoodadDaemonEyes1",
+            "Metadata/Monsters/LeagueAffliction/DoodadDaemons/DoodadDaemonEyes2",
+            "Metadata/Monsters/LeagueAffliction/DoodadDaemons/DoodadDaemonEyes3",
+            "Metadata/Monsters/LeagueAffliction/DoodadDaemons/DoodadDaemonSpikes",
+            "Metadata/Monsters/LeagueAffliction/DoodadDaemons/DoodadDaemonSpikes2",
+            "Metadata/Monsters/LeagueAffliction/DoodadDaemons/DoodadDaemonSpikes3",
+            "Metadata/Monsters/LeagueAffliction/DoodadDaemons/DoodadDaemonPimple1",
+            "Metadata/Monsters/LeagueAffliction/DoodadDaemons/DoodadDaemonPimple2",
+            "Metadata/Monsters/LeagueAffliction/DoodadDaemons/DoodadDaemonPimple3",
+            "Metadata/Monsters/LeagueAffliction/DoodadDaemons/DoodadDaemonGoatFillet1Vanish",
+            "Metadata/Monsters/LeagueAffliction/DoodadDaemons/DoodadDaemonGoatFillet2Vanish",
+            "Metadata/Monsters/LeagueAffliction/DoodadDaemons/DoodadDaemonGoatRhoa1Vanish",
+            "Metadata/Monsters/LeagueAffliction/DoodadDaemons/DoodadDaemonGoatRhoa2Vanish",
+            
             // Conquerors Ignores
-            "Metadata/Monsters/AtlasExiles/AtlasExile5Throne",
-            "Metadata/Monsters/AtlasExiles/AtlasExile5Apparition",
+            "Metadata/Monsters/AtlasExiles/AtlasExile1@",
+            "Metadata/Monsters/AtlasExiles/CrusaderInfluenceMonsters/CrusaderArcaneRune",
+            "Metadata/Monsters/AtlasExiles/AtlasExile2_",
+            "Metadata/Monsters/AtlasExiles/EyrieInfluenceMonsters/EyrieFrostnadoDaemon",
+            "Metadata/Monsters/AtlasExiles/AtlasExile3@",
+            "Metadata/Monsters/AtlasExiles/AtlasExile3AcidPitDaemon",
             "Metadata/Monsters/AtlasExiles/AtlasExile3BurrowingViperMelee",
             "Metadata/Monsters/AtlasExiles/AtlasExile3BurrowingViperRanged",
-            "Metadata/Monsters/AtlasExiles/AtlasExile3AcidPitDaemon",
+            "Metadata/Monsters/AtlasExiles/AtlasExile4@",
             "Metadata/Monsters/AtlasExiles/AtlasExile4ApparitionCascade",
-            // "Metadata/Monsters/AtlasExiles/AtlasExile3Apparition",
-            "Metadata/Monsters/AtlasExiles/AtlasExile2_",
-            "Metadata/Monsters/InvisibleFire/InvisibleFireEyrieHurricane",
-            // "Metadata/Monsters/AtlasExiles/AtlasExile1Apparition",
+            "Metadata/Monsters/AtlasExiles/AtlasExile5Apparition",
+            "Metadata/Monsters/AtlasExiles/AtlasExile5Throne",
+
             // Incursion Ignores
             "Metadata/Monsters/LeagueIncursion/VaalSaucerRoomTurret",
             "Metadata/Monsters/LeagueIncursion/VaalSaucerTurret",
+            "Metadata/Monsters/LeagueIncursion/VaalSaucerTurret",
+            
+            // Betrayal Ignores
+            "Metadata/Monsters/LeagueBetrayal/BetrayalTaserNet",
+            "Metadata/Monsters/LeagueBetrayal/FortTurret/FortTurret1Safehouse",
+            "Metadata/Monsters/LeagueBetrayal/FortTurret/FortTurret1",
+            "Metadata/Monsters/LeagueBetrayal/MasterNinjaCop",
+
+            // Legion Ignores
+            "Metadata/Monsters/LegionLeague/LegionVaalGeneralProjectileDaemon",
+            "Metadata/Monsters/LegionLeague/LegionSergeantStampedeDaemon",
+
+            // Random Ignores
+            "Metadata/Monsters/InvisibleFire/InvisibleSandstorm_",
+            "Metadata/Monsters/InvisibleFire/InvisibleFrostnado",
+            "Metadata/Monsters/InvisibleFire/InvisibleFireAfflictionDemonColdDegen",
+            "Metadata/Monsters/InvisibleFire/InvisibleFireAfflictionDemonColdDegenUnique",
+            "Metadata/Monsters/InvisibleFire/InvisibleFireAfflictionCorpseDegen",
+            "Metadata/Monsters/InvisibleFire/InvisibleFireEyrieHurricane",
+
+            "Metadata/Monsters/InvisibleCurse/InvisibleFrostbiteStationary",
+            "Metadata/Monsters/InvisibleCurse/InvisibleConductivityStationary",
+
+            "Metadata/Monsters/InvisibleAura/InvisibleWrathStationary",
+
+            "Metadata/Monsters/LeagueSynthesis/SynthesisDroneBossTurret1",
+            "Metadata/Monsters/LeagueSynthesis/SynthesisDroneBossTurret2",
+            "Metadata/Monsters/LeagueSynthesis/SynthesisDroneBossTurret3",
+            "Metadata/Monsters/LeagueSynthesis/SynthesisDroneBossTurret4",
+
+            "Metadata/Monsters/LeagueBestiary/RootSpiderBestiaryAmbush",
+
+            // "Metadata/Monsters/Labyrinth/GoddessOfJustice",
+            // "Metadata/Monsters/Labyrinth/GoddessOfJusticeMapBoss",
+            "Metadata/Monsters/Frog/FrogGod/SilverOrb",
+            "Metadata/Monsters/Frog/FrogGod/SilverPool",
+            "Metadata/Monsters/LunarisSolaris/SolarisCelestialFormAmbushUniqueMap",
+            "Metadata/Monsters/Invisible/MaligaroSoulInvisibleBladeVortex",
+            "Metadata/Monsters/Daemon",
+            "Metadata/Monsters/Daemon/MaligaroBladeVortexDaemon",
+            "Metadata/Monsters/Daemon/SilverPoolChillDaemon",
+            "Metadata/Monsters/AvariusCasticus/AvariusCasticusStatue",
         };
 
         private readonly Queue<Entity> EntityAddedQueue = new Queue<Entity>();
@@ -143,9 +204,19 @@ namespace EliteBar
                 if (!structValue.IsAlive) continue;
                 var structValueCurLife = structValue.CurLife;
                 var space = Settings.Space * index;
-                var rectangleF = new RectangleF(Settings.X, Settings.Y + space, Settings.Width, Settings.Height);
-                var monsterText = $"{structValue.Name} => {structValueCurLife:###' '###' '###} | {structValue.PercentLife * 100}%";
+                var delta = structValue.Entity.GridPos - GameController.Player.GridPos;
+                var distance = delta.GetPolarCoordinates(out var phi);
+                var monsterText = $"{(int)distance} | {structValue.Name} => {structValueCurLife:###' '###' '###} | {structValue.PercentLife * 100}%";
+                if (Settings.Debug)
+                    monsterText = $"{(int)distance} | {structValue.Entity.Path} => {structValueCurLife:###' '###' '###} | {structValue.PercentLife * 100}%";
                 var position = new SharpDX.Vector2(Settings.X + Settings.StartTextX, Settings.Y + space + Settings.StartTextY);
+                var rectangleF = new RectangleF(Settings.X, Settings.Y + space, Settings.Width, Settings.Height);
+
+                if (Settings.DynamicWidth)
+                {
+                    int width = (int)Graphics.MeasureText(monsterText).X;
+                    rectangleF = new RectangleF(Settings.X, Settings.Y + space, width, Settings.Height);
+                }
 
                 if (Settings.UseImguiForDraw)
                 {
@@ -174,22 +245,14 @@ namespace EliteBar
                     Graphics.DrawImage("healthbar.png", rectangleF, structValue.Color);
                     rectangleF.Inflate(1, 1);
                     Graphics.DrawFrame(rectangleF, Settings.BorderColor, 1);
+                    Graphics.DrawText(monsterText, position, Settings.TextColor);
                 }
 
-                var delta = structValue.Entity.GridPos -
-                            GameController.Player.GridPos;
-
-                var distance = delta.GetPolarCoordinates(out var phi);
                 var rectUV = MathHepler.GetDirectionsUV(phi, distance);
                 rectangleF.Left -= rectangleF.Height + 5;
                 rectangleF.Width = rectangleF.Height;
+
                 Graphics.DrawImage("directions.png", rectangleF, rectUV);
-
-                Graphics.DrawText(monsterText, position, Settings.TextColor);
-
-                Graphics.DrawText($"{Math.Floor(distance)}",
-                    new SharpDX.Vector2(rectangleF.X - (rectangleF.Height + 7), rectangleF.Y + Settings.StartTextY),
-                    Settings.TextColor);
 
                 index++;
             }
