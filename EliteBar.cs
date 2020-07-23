@@ -62,6 +62,7 @@ namespace EliteBar
             // Legion Ignores
             "Metadata/Monsters/LegionLeague/LegionVaalGeneralProjectileDaemon",
             "Metadata/Monsters/LegionLeague/LegionSergeantStampedeDaemon",
+            "Metadata/Monsters/LegionLeague/LegionSandTornadoDaemon",
 
             // Random Ignores
             "Metadata/Monsters/InvisibleFire/InvisibleSandstorm_",
@@ -70,9 +71,12 @@ namespace EliteBar
             "Metadata/Monsters/InvisibleFire/InvisibleFireAfflictionDemonColdDegenUnique",
             "Metadata/Monsters/InvisibleFire/InvisibleFireAfflictionCorpseDegen",
             "Metadata/Monsters/InvisibleFire/InvisibleFireEyrieHurricane",
+            "Metadata/Monsters/InvisibleFire/InvisibleIonCannonFrost",
+            "Metadata/Monsters/InvisibleFire/AfflictionBossFinalDeathZone",
 
             "Metadata/Monsters/InvisibleCurse/InvisibleFrostbiteStationary",
             "Metadata/Monsters/InvisibleCurse/InvisibleConductivityStationary",
+            "Metadata/Monsters/InvisibleCurse/InvisibleEnfeeble",
 
             "Metadata/Monsters/InvisibleAura/InvisibleWrathStationary",
 
@@ -82,6 +86,7 @@ namespace EliteBar
             "Metadata/Monsters/LeagueSynthesis/SynthesisDroneBossTurret4",
 
             "Metadata/Monsters/LeagueBestiary/RootSpiderBestiaryAmbush",
+            "Metadata/Monsters/LeagueBestiary/BlackScorpionBestiaryBurrowTornado",
 
             // "Metadata/Monsters/Labyrinth/GoddessOfJustice",
             // "Metadata/Monsters/Labyrinth/GoddessOfJusticeMapBoss",
