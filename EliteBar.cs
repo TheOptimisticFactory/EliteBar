@@ -98,6 +98,8 @@ namespace EliteBar
             "Metadata/Monsters/Daemon/MaligaroBladeVortexDaemon",
             "Metadata/Monsters/Daemon/SilverPoolChillDaemon",
             "Metadata/Monsters/AvariusCasticus/AvariusCasticusStatue",
+
+            "Metadata/Monsters/LegionLeague/LegionKaruiGeneralFish",
         };
 
         private readonly Queue<Entity> EntityAddedQueue = new Queue<Entity>();
