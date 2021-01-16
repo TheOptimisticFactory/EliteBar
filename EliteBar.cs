@@ -116,11 +116,7 @@ namespace EliteBar
 
         public override Job Tick()
         {
-            if (Settings.MultiThreading)
-                return GameController.MultiThreadManager.AddJob(TickLogic, nameof(EliteBar));
-
-            TickLogic();
-            return null;
+            return new Job("EliteBar", TickLogic);
         }
 
         private void TickLogic()
@@ -136,8 +132,8 @@ namespace EliteBar
                 if (!entity.IsHostile) continue;
                 var rarity = entity.Rarity;
 
-                if (!Settings.ShowWhite && rarity == MonsterRarity.White) continue;
-                if (!Settings.ShowMagic && rarity == MonsterRarity.Magic) continue;
+                if (rarity == MonsterRarity.White) continue;
+                if (rarity == MonsterRarity.Magic) continue;
                 if (!Settings.ShowRare && rarity == MonsterRarity.Rare) continue;
                 if (!Settings.ShowUnique && rarity == MonsterRarity.Unique) continue;
 
@@ -145,12 +141,6 @@ namespace EliteBar
 
                 switch (rarity)
                 {
-                    case MonsterRarity.White:
-                        color = Settings.NormalMonster;
-                        break;
-                    case MonsterRarity.Magic:
-                        color = Settings.MagicMonster;
-                        break;
                     case MonsterRarity.Rare:
                         color = Settings.RareMonster;
                         break;
@@ -213,9 +203,16 @@ namespace EliteBar
                 var space = Settings.Space * index;
                 var delta = structValue.Entity.GridPos - GameController.Player.GridPos;
                 var distance = delta.GetPolarCoordinates(out var phi);
-                var monsterText = $"{(int)distance} | {structValue.Name} => {structValueCurLife:###' '###' '###} | {structValue.PercentLife * 100}%";
+                var monsterText = $"{(int)distance} | {structValue.Name} => {structValueCurLife:###' '###' '###} | {(structValue.PercentLife * 100).ToString("0.0")}%";
                 if (Settings.Debug)
-                    monsterText = $"{(int)distance} | {structValue.Entity.Path} => {structValueCurLife:###' '###' '###} | {structValue.PercentLife * 100}%";
+                {
+                    monsterText = $"{(int)distance} | {structValue.Entity.Path} => {structValueCurLife:###' '###' '###} | {(structValue.PercentLife * 100).ToString("0.0")}%";
+
+                }
+                else if (Settings.LimitText)
+                {
+                    monsterText = $"{structValue.Name} | {(structValue.PercentLife * 100).ToString("0.0")}%";
+                }
                 var position = new SharpDX.Vector2(Settings.X + Settings.StartTextX, Settings.Y + space + Settings.StartTextY);
                 var rectangleF = new RectangleF(Settings.X, Settings.Y + space, Settings.Width, Settings.Height);
 
