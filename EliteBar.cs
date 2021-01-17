@@ -116,7 +116,7 @@ namespace EliteBar
 
         public override Job Tick()
         {
-            return new Job("EliteBar", TickLogic);
+            return GameController.MultiThreadManager.AddJob(TickLogic, nameof(EliteBar));
         }
 
         private void TickLogic()
@@ -158,17 +158,20 @@ namespace EliteBar
                 entity.SetHudComponent(new EliteDrawBar(entity, color));
             }
 
-            foreach (var entity in GameController.EntityListWrapper.ValidEntitiesByType[EntityType.Monster])
-            {
-                var drawCmd = entity.GetHudComponent<EliteDrawBar>();
-                drawCmd?.Update();
-            }
+            //foreach (var entity in GameController.EntityListWrapper.ValidEntitiesByType[EntityType.Monster])
+            //{
+            //    var drawCmd = entity.GetHudComponent<EliteDrawBar>();
+            //    drawCmd?.Update();
+            //}
         }
 
         public override void EntityAdded(Entity Entity)
         {
             if (!Settings.Enable.Value) return;
-            if (Entity.Type == EntityType.Monster) EntityAddedQueue.Enqueue(Entity);
+            if (Entity.Type != EntityType.Monster) return;
+            if (Entity.Rarity != MonsterRarity.Rare && Entity.Rarity != MonsterRarity.Unique) return;
+                
+            EntityAddedQueue.Enqueue(Entity);
         }
 
         public override void AreaChange(AreaInstance area)
