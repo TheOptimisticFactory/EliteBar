@@ -158,11 +158,11 @@ namespace EliteBar
                 entity.SetHudComponent(new EliteDrawBar(entity, color));
             }
 
-            //foreach (var entity in GameController.EntityListWrapper.ValidEntitiesByType[EntityType.Monster])
-            //{
-            //    var drawCmd = entity.GetHudComponent<EliteDrawBar>();
-            //    drawCmd?.Update();
-            //}
+            foreach (var entity in GameController.EntityListWrapper.ValidEntitiesByType[EntityType.Monster])
+            {
+                var drawCmd = entity.GetHudComponent<EliteDrawBar>();
+                drawCmd?.Update();
+            }
         }
 
         public override void EntityAdded(Entity Entity)
