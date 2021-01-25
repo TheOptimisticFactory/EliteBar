@@ -18,6 +18,7 @@ namespace EliteBar
         {
             "Metadata/Monsters/LeagueAffliction/Volatile/AfflictionVolatile",
             "Metadata/Monsters/VolatileCore/VolatileCore",
+            "Metadata/Monsters/LegionLeague/LegionKaruiGeneralFish",
             
             // Delirium Ignores
             "Metadata/Monsters/LeagueAffliction/DoodadDaemons/DoodadDaemonEyes1",
@@ -73,20 +74,15 @@ namespace EliteBar
             "Metadata/Monsters/InvisibleFire/InvisibleFireEyrieHurricane",
             "Metadata/Monsters/InvisibleFire/InvisibleIonCannonFrost",
             "Metadata/Monsters/InvisibleFire/AfflictionBossFinalDeathZone",
+            "Metadata/Monsters/InvisibleFire/InvisibleFireDoedreSewers",
+            "Metadata/Monsters/InvisibleFire/InvisibleFireDelveFlameTornadoSpiked",
+            "Metadata/Monsters/InvisibleFire/InvisibleHolyCannon",
 
             "Metadata/Monsters/InvisibleCurse/InvisibleFrostbiteStationary",
             "Metadata/Monsters/InvisibleCurse/InvisibleConductivityStationary",
             "Metadata/Monsters/InvisibleCurse/InvisibleEnfeeble",
 
             "Metadata/Monsters/InvisibleAura/InvisibleWrathStationary",
-
-            "Metadata/Monsters/LeagueSynthesis/SynthesisDroneBossTurret1",
-            "Metadata/Monsters/LeagueSynthesis/SynthesisDroneBossTurret2",
-            "Metadata/Monsters/LeagueSynthesis/SynthesisDroneBossTurret3",
-            "Metadata/Monsters/LeagueSynthesis/SynthesisDroneBossTurret4",
-
-            "Metadata/Monsters/LeagueBestiary/RootSpiderBestiaryAmbush",
-            "Metadata/Monsters/LeagueBestiary/BlackScorpionBestiaryBurrowTornado",
 
             // "Metadata/Monsters/Labyrinth/GoddessOfJustice",
             // "Metadata/Monsters/Labyrinth/GoddessOfJusticeMapBoss",
@@ -98,8 +94,34 @@ namespace EliteBar
             "Metadata/Monsters/Daemon/MaligaroBladeVortexDaemon",
             "Metadata/Monsters/Daemon/SilverPoolChillDaemon",
             "Metadata/Monsters/AvariusCasticus/AvariusCasticusStatue",
+            "Metadata/Monsters/Maligaro/MaligaroDesecrate",
+            
+            // Synthesis
+            "Metadata/Monsters/LeagueSynthesis/SynthesisDroneBossTurret1",
+            "Metadata/Monsters/LeagueSynthesis/SynthesisDroneBossTurret2",
+            "Metadata/Monsters/LeagueSynthesis/SynthesisDroneBossTurret3",
+            "Metadata/Monsters/LeagueSynthesis/SynthesisDroneBossTurret4",
+            "Metadata/Monsters/LeagueSynthesis/SynthesisWalkerSpawned_",
 
-            "Metadata/Monsters/LegionLeague/LegionKaruiGeneralFish",
+            //Ritual
+            "Metadata/Monsters/LeagueRitual/FireMeteorDaemon",
+            "Metadata/Monsters/LeagueRitual/GenericSpeedDaemon",
+            "Metadata/Monsters/LeagueRitual/ColdRotatingBeamDaemon",
+            "Metadata/Monsters/LeagueRitual/ColdRotatingBeamDaemonUber",
+            "Metadata/Monsters/LeagueRitual/GenericEnergyShieldDaemon",
+            "Metadata/Monsters/LeagueRitual/GenericMassiveDaemon",
+            "Metadata/Monsters/LeagueRitual/ChaosGreenVinesDaemon_",
+            "Metadata/Monsters/LeagueRitual/ChaosSoulrendPortalDaemon",
+            "Metadata/Monsters/LeagueRitual/VaalAtziriDaemon",
+            "Metadata/Monsters/LeagueRitual/LightningPylonDaemon",
+
+            // Bestiary
+            "Metadata/Monsters/LeagueBestiary/RootSpiderBestiaryAmbush",
+            "Metadata/Monsters/LeagueBestiary/BlackScorpionBestiaryBurrowTornado",
+            "Metadata/Monsters/LeagueBestiary/ModDaemonCorpseEruption",
+            "Metadata/Monsters/LeagueBestiary/ModDaemonSandLeaperExplode1",
+            "Metadata/Monsters/LeagueBestiary/ModDaemonStampede1",
+            "Metadata/Monsters/LeagueBestiary/ModDaemonGraspingPincers1",
         };
 
         private readonly Queue<Entity> EntityAddedQueue = new Queue<Entity>();
