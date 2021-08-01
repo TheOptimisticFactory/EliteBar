@@ -32,18 +32,19 @@ namespace EliteBar
         public RangeNode<int> StartTextY { get; set; } = new RangeNode<int>(0, -50, 350);
 
 
-        [Menu("Rare monster color")]
-        public ColorNode RareMonster { get; set; } = new ColorNode(Color.Yellow);
-        [Menu("Unique monster color")]
-        public ColorNode UniqueMonster { get; set; } = new ColorNode(Color.Orange);
+        [Menu("Rare monster bar color")]
+        public ColorNode RareMonsterBarColor { get; set; } = new ColorNode(Color.Yellow);
+        [Menu("Rare monster text color")]
+        public ColorNode RareMonsterTextColor { get; set; } = new ColorNode(Color.Black);
+        [Menu("Unique monster bar color")]
+        public ColorNode UniqueMonsterBarColor { get; set; } = new ColorNode(Color.Orange);
+        [Menu("Unique monster text color")]
+        public ColorNode UniqueMonsterTextColor { get; set; } = new ColorNode(Color.White);
         [Menu("Show rare monster")]
         public ToggleNode ShowRare { get; set; } = new ToggleNode(true);
         [Menu("Show unique monster")]
         public ToggleNode ShowUnique { get; set; } = new ToggleNode(true);
 
-
-        [Menu("Text Color")]
-        public ColorNode TextColor { get; set; } = new ColorNode(Color.White);
         [Menu("Show only Monster Name and %Hp Text")]
         public ToggleNode LimitText { get; set; } = new ToggleNode(false);
 

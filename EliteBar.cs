@@ -187,25 +187,28 @@ namespace EliteBar
                 if (!Settings.ShowRare && rarity == MonsterRarity.Rare) continue;
                 if (!Settings.ShowUnique && rarity == MonsterRarity.Unique) continue;
 
-                var color = Color.Red;
+                var barColor = Color.Red;
+                var textColor = Color.White;
 
                 switch (rarity)
                 {
                     case MonsterRarity.Rare:
-                        color = Settings.RareMonster;
+                        barColor = Settings.RareMonsterBarColor;
+                        textColor = Settings.RareMonsterTextColor;
                         break;
                     case MonsterRarity.Unique:
-                        color = Settings.UniqueMonster;
+                        barColor = Settings.UniqueMonsterBarColor;
+                        textColor = Settings.UniqueMonsterTextColor;
                         break;
                     case MonsterRarity.Error:
-                        color = Color.LightGray;
+                        barColor = Color.LightGray;
+                        barColor = Color.LightPink;
                         break;
                     default:
-                        color = Color.Red;
                         break;
                 }
 
-                entity.SetHudComponent(new EliteDrawBar(entity, color));
+                entity.SetHudComponent(new EliteDrawBar(entity, barColor, textColor));
             }
 
             foreach (var entity in GameController.EntityListWrapper.ValidEntitiesByType[EntityType.Monster])
@@ -286,8 +289,8 @@ namespace EliteBar
                         ImGuiWindowFlags.NoInputs | ImGuiWindowFlags.NoMove | ImGuiWindowFlags.NoTitleBar |
                         ImGuiWindowFlags.NoScrollbar);
 
-                    ImGui.PushStyleColor(ImGuiCol.PlotHistogram, structValue.Color.ToImguiVec4());
-                    ImGui.PushStyleColor(ImGuiCol.Text, Settings.TextColor.Value.ToImguiVec4());
+                    ImGui.PushStyleColor(ImGuiCol.PlotHistogram, structValue.BarColor.ToImguiVec4());
+                    ImGui.PushStyleColor(ImGuiCol.Text, structValue.TextColor.ToImguiVec4());
                     ImGui.PushStyleColor(ImGuiCol.FrameBg, Settings.ImguiDrawBg.Value.ToImguiVec4());
                     ImGui.ProgressBar(structValue.PercentLife, vect, $"{monsterText}");
                     ImGui.PopStyleColor(3);
@@ -299,10 +302,10 @@ namespace EliteBar
                 {
                     Graphics.DrawImage("healthbar_bg.png", rectangleF, Color.Black);
                     rectangleF.Width *= structValue.PercentLife;
-                    Graphics.DrawImage("healthbar.png", rectangleF, structValue.Color);
+                    Graphics.DrawImage("healthbar.png", rectangleF, structValue.BarColor);
                     rectangleF.Inflate(1, 1);
                     Graphics.DrawFrame(rectangleF, Settings.BorderColor, 1);
-                    Graphics.DrawText(monsterText, position, Settings.TextColor);
+                    Graphics.DrawText(monsterText, position, structValue.TextColor);
                 }
 
                 var rectUV = MathHepler.GetDirectionsUV(phi, distance);
@@ -317,10 +320,11 @@ namespace EliteBar
 
         public class EliteDrawBar
         {
-            public EliteDrawBar(Entity Entity, Color color)
+            public EliteDrawBar(Entity Entity, Color barColor, Color textColor)
             {
                 this.Entity = Entity;
-                Color = color;
+                BarColor = barColor;
+                TextColor = textColor;
                 Name = Entity.RenderName;
                 IsAlive = true;
                 CurLife = 0;
@@ -329,7 +333,8 @@ namespace EliteBar
 
             public Entity Entity { get; }
             public string Name { get; }
-            public Color Color { get; }
+            public Color BarColor { get; }
+            public Color TextColor { get; }
             public int CurLife { get; private set; }
             public float PercentLife { get; private set; }
             public bool IsAlive { get; private set; }
