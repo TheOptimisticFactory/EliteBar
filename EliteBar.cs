@@ -14,7 +14,7 @@ namespace EliteBar
 {
     public class EliteBar : BaseSettingsPlugin<EliteBarSettings>
     {
-        private readonly List<string> ignoredEntites = new List<string>
+        private readonly HashSet<string> ignoredEntites = new HashSet<string>
         {
             "Metadata/Monsters/LeagueAffliction/Volatile/AfflictionVolatile",
             "Metadata/Monsters/VolatileCore/VolatileCore",
